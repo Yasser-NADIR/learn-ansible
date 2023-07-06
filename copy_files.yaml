@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: copy files to servers
+    copy:
+      src: default_site.html
+      dest: /home/yasser
+      owner: yasser
+      group: yasser
+      mode: 0777
