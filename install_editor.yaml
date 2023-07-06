@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+    - name: install vim => masters
+      yum:
+        name: vim
+      when: ansible_hostname == "master1"
+
+    - name: install nano => workers
+      yum:
+        name: nano
+      when: ansible_hostname in ["worker1", "worker2"]

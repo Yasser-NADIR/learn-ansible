@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: remove vim
+    yum:
+      name: vim
+      state: absent
+
+  - name: remove nano
+    yum:
+      name: nano
+      state: absent
