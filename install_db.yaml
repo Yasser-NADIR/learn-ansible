@@ -1,0 +1,21 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+    package:
+      upage_case: true
+
+- hosts: masters
+  become: true
+  tasks:
+    - name: install mysql
+      yum:
+        name: mysql
+
+- hosts: workers
+  become: true
+  tasks:
+    - name: install postgresql
+      yum:
+        name: postgresql

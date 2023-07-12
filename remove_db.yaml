@@ -1,0 +1,17 @@
+---
+
+- hosts: masters
+  become: true
+  tasks:
+    - name: install mysql
+      yum:
+        name: mysql
+        state: absent
+
+- hosts: workers
+  become: true
+  tasks:
+    - name: install postgresql
+      yum:
+        name: postgresql
+        state: absent
