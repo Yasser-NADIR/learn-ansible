@@ -1,3 +1,6 @@
+[masters]
 192.168.56.110 editor_name=vim
+
+[workers]
 192.168.56.111 editor_name=nano
 192.168.56.112 editor_name=nano
