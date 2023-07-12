@@ -11,3 +11,10 @@
   - name: install apache2 package
     yum:
       name: httpd
+
+  - name: started apache2 service
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+
