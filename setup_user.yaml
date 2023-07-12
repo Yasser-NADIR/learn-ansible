@@ -1,0 +1,25 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: create user soufiane
+    user:
+      name: soufiane
+      groups: root
+
+  - name: add ssh key for soufiane
+    authorized_key:
+      user: soufiane
+      key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDDETHWg1CDtLbDPW7SMifVXv04139pSDkmYPkh1VAPkNFgrLHDzIXPURDOA0S/hvNRUzMsr2Vw53OTdvGWJZgPJqBbRdNea6u0SVMfFIFw3qHUlrBbfKoeT3hndY46AyJFtBQNFOGKgIOFWxaR3ok/qKn5BYB5eHRJxcygiWYC6yNxmHDOlHojIMc9S90toJY5jDaNoVvI2l4UU7ZMHL+ZMoRChjg3E1gyo5RN+eb0h883GRtn3J9cBT/5u79w/PnmKan6tqtMKW1lxMrNsLaudxpENOp93MyQcJUUJJEmi53cUBuKuNmeUmn85XMte6XZGgmwEYyMaALbYtWb6an9 yasser@config.server"
+
+  - name: add sudoers file for soufiane
+    copy:
+      src: sudoer_soufiane
+      dest: /etc/sudoers.d/soufiane
+      owner: root
+      group: root
+      mode: 0440
+
+
