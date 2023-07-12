@@ -23,7 +23,7 @@
       path: /etc/httpd/conf/httpd.conf
       regex: "^ServerName"
       line: ServerName 127.0.0.1
-    regester: httpd_servername
+    register: httpd_servername
 
 
   - name: restating httpd server after servername's changed
