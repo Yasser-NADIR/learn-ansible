@@ -18,3 +18,10 @@
       state: started
       enabled: yes
 
+  - name: update servername in apache configfile
+    lineinfile:
+      path: /etc/httpd/conf/httpd.conf
+      regex: "^ServerName"
+      line: ServerName 127.0.0.1
+    register: httpd_servername
+
